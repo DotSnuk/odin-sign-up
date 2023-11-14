@@ -70,6 +70,16 @@ h1 {
     flex-grow: 3;
 }
 
+:focus {
+    border: 1px solid blue;
+    outline: none;
+}
+:invalid {
+    border: 2px solid red;
+}
+form:invalid {
+    border: none;
+}
 
 form {
     width: 70%;
