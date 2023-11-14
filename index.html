@@ -19,7 +19,7 @@
             </h1>
         </div>
         <div class="form">
-            <form action="" method="post" novalidate>
+            <form action="" method="post" id="myForm" novalidate>
                 <div class="pair">
                     <label for="firstName">First name *</label>
                     <input type="text" name="firstName" id="firstName" placeholder="First name" required>
@@ -47,8 +47,9 @@
             </form>
         </div>
         <div class="bottom">
-            <input type="button" value="Submit">
+            <input type="submit" form="myForm" value="Submit">
         </div>
+    
     
     </div>
     <div class="container-right">
