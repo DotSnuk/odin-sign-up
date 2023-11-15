@@ -19,7 +19,7 @@ function validateForm(e){
             err.classList.remove('error');
         }
     })
-    matchPwd();
+    
     const form = e.target;
     if (form.checkValidity() && matchPwd()){
             console.log('true');
