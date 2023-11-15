@@ -42,5 +42,3 @@ function matchPwd(){
         return false;
     }
 }
-
-// function that checks value of password and confirm password so they match
