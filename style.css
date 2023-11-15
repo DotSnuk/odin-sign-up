@@ -68,6 +68,7 @@ h1 {
 
 .container-right {
     flex-grow: 3;
+    flex-direction: column;
 }
 
 :focus {
@@ -133,6 +134,23 @@ input[type="submit"]{
     border: 0;
     color: white;
     align-items: flex-end;
+}
+
+.credit {
+    font-size: 12px;
+    background-color: #e4e7ed;
+    border-radius: 5px;
+    text-align: center;
+    align-items: flex-end;
+    margin-top: auto;
+    margin-bottom: 30px;
+    align-self: center;
+    padding: 8px;
+}
+
+.credit a {
+    text-decoration: none;
+    color: black;
 }
 
 .bottom {
