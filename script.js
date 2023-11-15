@@ -5,35 +5,41 @@ inputs.forEach(input => {
     input.addEventListener("invalid", () => {
         input.classList.add('error');
     });
-    input.addEventListener("focus", () => {
-        if (input.checkValidity && (input.value > 1)){
-            //nope
+    input.addEventListener("blur", () => {
+        if (input.checkValidity()){
             input.classList.remove('error');
         }
-    })
 })
-
-function checkInput(t){
-    if (t.checkValidity){
-        t.classList.remove('error');
-    }
-}
+})
 
 function validateForm(e){
     const errors = document.querySelectorAll('.error');
     errors.forEach(err => {
-        if (err.checkValidity){
+        if (err.checkValidity()){
             err.classList.remove('error');
         }
     })
-
-    console.log('hello');
+    matchPwd();
     const form = e.target;
-    if (form.checkValidity()){
-        console.log('true');
+    if (form.checkValidity() && matchPwd()){
+            console.log('true');
+            e.preventDefault();
+        } else {
+            console.log('false');
+            e.preventDefault();
+        }
+    }
+
+
+function matchPwd(){
+    const pwds = document.querySelectorAll('input[type="password"]');
+    if (pwds[0].value === pwds[1].value){
+        return true;
     } else {
-        console.log('false');
-        e.preventDefault();
+        pwds.forEach(pwd => {
+            pwd.classList.add('error');
+        })
+        return false;
     }
 }
 
